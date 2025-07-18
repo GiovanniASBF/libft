@@ -12,17 +12,3 @@ int ft_isalpha(int c)
     }
     
 }
-
-/*
-#include <stdio.h>
-#include <ctype.h>
-int main(void)
-{
-    int res;
-    char test;
-
-    test = 'F';
-    res = isalpha(test);
-    printf("result: %i\n", res);
-}
-*/
