@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gaguiar- <gaguiar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/19 14:05:33 by gaguiar-          #+#    #+#             */
-/*   Updated: 2025/07/19 15:47:00 by gaguiar-         ###   ########.fr       */
+/*   Created: 2025/07/19 15:36:55 by gaguiar-          #+#    #+#             */
+/*   Updated: 2025/07/19 15:55:31 by gaguiar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft.h"
 
-int	ft_isalnum(int c);
-int	ft_isalpha(int c);
-int	ft_isascii(int c);
-int	ft_isdigit(int c);
-int	ft_isprint(int c);
-int	ft_strlen(const char *s);
-int	ft_strncmp(const char *s1, const char *s2, int n);
-int	ft_tolower(int c);
-int	ft_toupper(int c);
+int	ft_strncmp(const char *s1, const char *s2, int n)
+{
+	int	i;
 
-#endif 
+	i = 0;
+	while ((s1[i] != '\0' || s2[i] != '\0') && i < n)
+	{
+		if (s1[i] != s2[i])
+			return (s1[i] - s2[i]);
+		i++;
+	}
+	return (s1[i] - s2[i]);
+}
+
