@@ -4,8 +4,8 @@
 
 int main(void)
 {
-    int res;
-    char t_isalpha;
+    int     res;
+    char    t_isalpha;
     char    t_isdigit;
     char    t_alnum;
 

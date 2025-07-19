@@ -2,7 +2,9 @@
 NAME = libft.a
 TEST = test
 
-SRC = $(wildcard *.c)
+SRC = ft_isalnum.c \
+	ft_isalpha.c \
+	ft_isdigit.c
 OBJ = $(SRC:.c=.o)
 
 CC = cc
@@ -23,6 +25,6 @@ clean:
 	rm -f $(OBJ)
 
 fclean: clean
-	rm -f $(NAME)
+	rm -f $(NAME) $(TEST)
 
 re: fclean all
