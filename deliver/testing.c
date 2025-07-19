@@ -4,42 +4,42 @@
 
 int	main(void)
 {
-	char	t_isalnum;
-	char	t_isalpha;
-	char	t_isascii;
-	char	t_isdigit;
-	char	t_isprint;
-	char	t_toupper;
-	int		resDigit;
-	int		resChar;
+	char	test_var;
+	int		res_digit;
+	int		res_char;
 
     //ft_isalpha()
-	t_isalpha = 'F';
-	resDigit = ft_isalpha(t_isalpha);
-	printf("ft_isalpha(): %i\n", resDigit);
+	test_var = 'F';
+	res_digit = ft_isalpha(test_var);
+	printf("ft_isalpha(): %i\n", res_digit);
 
     //ft_isdigit()
-	t_isdigit = '2';
-	resDigit = ft_isdigit(t_isdigit);
-	printf("ft_isdigit(): %i\n", resDigit);
+	test_var = '2';
+	res_digit = ft_isdigit(test_var);
+	printf("ft_isdigit(): %i\n", res_digit);
 
     //ft_isalnum()
-	t_isalnum = '!';
-	resDigit = ft_isalnum(t_isalnum);
-	printf("ft_isalnum(): %i\n", resDigit);
+	test_var = '!';
+	res_digit = ft_isalnum(test_var);
+	printf("ft_isalnum(): %i\n", res_digit);
 
     //ft_isascii()
-	t_isascii = '~';
-	resDigit = ft_isascii(t_isascii);
-	printf("ft_isascii(): %i\n", resDigit);
+	test_var = '~';
+	res_digit = ft_isascii(test_var);
+	printf("ft_isascii(): %i\n", res_digit);
 
 	//ft_isprint()
-	t_isprint = '\0';
-	resDigit = ft_isprint(t_isprint);
-	printf("ft_isprint(): %i\n", resDigit);
+	test_var = '\0';
+	res_digit = ft_isprint(test_var);
+	printf("ft_isprint(): %i\n", res_digit);
 
 	//ft_toupper()
-	t_toupper = ')';
-	resChar = ft_toupper(t_toupper);
-	printf("ft_toupper(): %c\n", resChar);
+	test_var = ')';
+	res_char = ft_toupper(test_var);
+	printf("ft_toupper(): %c\n", res_char);
+
+	//ft_tolower()
+	test_var = 'H';
+	res_char = ft_tolower(test_var);
+	printf("ft_tolower(): %c\n", res_char);
 }
