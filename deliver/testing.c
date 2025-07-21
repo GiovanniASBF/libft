@@ -8,7 +8,6 @@ int	main(void)
 	char	test_var;
 	char	*test_str;
 	char	*test_str2;
-	char	*test_strlcpy;
 	int		res_digit;
 	int		res_char;
 	int	size;
@@ -61,6 +60,7 @@ int	main(void)
 
 	//ft_strlcpy()
 	size = 4;
+	char	test_strlcpy[8];
 	test_str = "bizarre";
 	res_digit = ft_strlcpy(test_strlcpy, test_str, size);
 	printf("ft_strlcpy(): \n");
@@ -69,4 +69,16 @@ int	main(void)
 		printf("destiny: %s \n", test_strlcpy);
 	}
 	printf("src length: %i\n", res_digit);
+
+	//ft_strlcat()
+	size = 18;
+	char test_strlcat[18] = "bizarre ";
+	test_str = "adventure";
+	res_digit = ft_strlcat(test_strlcat, test_str, size);
+	printf("ft_strlcat(): \n");
+	if (size > 0)
+	{
+		printf("destiny: %s \n", test_strlcat);
+	}
+	printf("ideal length: %i\n", res_digit);
 }
