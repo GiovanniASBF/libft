@@ -8,8 +8,10 @@ int	main(void)
 	char	test_var;
 	char	*test_str;
 	char	*test_str2;
+	char	*test_strlcpy;
 	int		res_digit;
 	int		res_char;
+	int	size;
 
     //ft_isalpha()
 	test_var = 'F';
@@ -56,4 +58,15 @@ int	main(void)
 	test_str2 = "abcda";
 	res_digit = ft_strncmp(test_str, test_str2, 3);
 	printf("ft_strncmp(): %i\n", res_digit);
+
+	//ft_strlcpy()
+	size = 4;
+	test_str = "bizarre";
+	res_digit = ft_strlcpy(test_strlcpy, test_str, size);
+	printf("ft_strlcpy(): \n");
+	if (size > 0)
+	{
+		printf("destiny: %s \n", test_strlcpy);
+	}
+	printf("src length: %i\n", res_digit);
 }
