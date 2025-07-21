@@ -12,7 +12,8 @@ SRC = ft_isalnum.c \
 	ft_strlen.c \
 	ft_strncmp.c \
 	ft_strlcpy.c \
-	ft_strlcat.c
+	ft_strlcat.c \
+	ft_strnstr.c
 OBJ = $(SRC:.c=.o)
 
 CC = cc
@@ -27,7 +28,7 @@ $(NAME): $(OBJ)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 $(TEST): testing.c $(NAME)
-	$(CC) -o $(TEST) testing.c $(NAME)
+	$(CC) -lbsd -o $(TEST) testing.c $(NAME)
 
 clean:
 	rm -f $(OBJ)

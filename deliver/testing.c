@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <ctype.h>
 #include <string.h>
+#include <bsd/string.h>
 
 int	main(void)
 {
@@ -81,4 +82,12 @@ int	main(void)
 		printf("destiny: %s \n", test_strlcat);
 	}
 	printf("ideal length: %i\n", res_digit);
+
+	//ft_strnstr()
+	size = 4;
+	test_str = "adventure";
+	test_str2 = "ventu";
+	char *str = ft_strnstr(test_str, test_str2, size);
+	printf("ft_strnstr(): \n");
+	printf("string: %s\n", str);
 }
