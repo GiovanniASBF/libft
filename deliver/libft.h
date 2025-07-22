@@ -6,7 +6,7 @@
 /*   By: gaguiar- <gaguiar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 14:05:33 by gaguiar-          #+#    #+#             */
-/*   Updated: 2025/07/21 18:59:29 by gaguiar-         ###   ########.fr       */
+/*   Updated: 2025/07/22 15:22:15 by gaguiar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int		ft_isalpha(int c);
 int		ft_isascii(int c);
 int		ft_isdigit(int c);
 int		ft_isprint(int c);
+void	*ft_memset(void *s, int c, int n);
 int		ft_strlcat(char *dst, const char *src, int size);
 int		ft_strlcpy(char *dst, const char *src, int size);
 int		ft_strlen(const char *s);

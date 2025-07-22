@@ -13,7 +13,8 @@ SRC = ft_isalnum.c \
 	ft_strncmp.c \
 	ft_strlcpy.c \
 	ft_strlcat.c \
-	ft_strnstr.c
+	ft_strnstr.c \
+	ft_memset.c
 OBJ = $(SRC:.c=.o)
 
 CC = cc

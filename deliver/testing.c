@@ -12,6 +12,7 @@ int	main(void)
 	int		res_digit;
 	int		res_char;
 	int	size;
+	int i;
 
     //ft_isalpha()
 	test_var = 'F';
@@ -90,4 +91,17 @@ int	main(void)
 	char *str = ft_strnstr(test_str, test_str2, size);
 	printf("ft_strnstr(): \n");
 	printf("string: %s\n", str);
+
+	//ft_memset()
+	i = 0;
+	size = 4;
+	int str_memset[8];
+	memset(str_memset, size, 8 * sizeof(int));
+	printf("memset(): \n");
+	while (i < 8)
+	{
+		printf("%d\n", str_memset[i]);
+		i++;
+	}
+	printf("\n");
 }
