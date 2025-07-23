@@ -169,4 +169,11 @@ int	main(void)
 		i++;
 	}
 	printf("\n");
+
+	//ft_strchr()
+	test_str = "adventure";
+	char test_char = 'v';
+	str = ft_strchr(test_str, test_char);
+	printf("ft_strchr(): \n");
+	printf("string: %s\n", str);
 }
