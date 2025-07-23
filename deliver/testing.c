@@ -147,4 +147,26 @@ int	main(void)
 		i++;
 	}
 	printf("\n");
+
+	//ft_memmove()
+	i = 0;
+	size = 4;
+	int str_srcm[8] = {1, 2, 3, 4, 5, 6, 7, 8};
+	int str_dstm[8] = {10, 20, 30, 40, 50, 60, 70, 80};
+	printf("before ft_memmove: \n");
+	while (i < 8)
+	{
+		printf("%d\n", str_dstm[i]);
+		i++;
+	}
+	printf("\n");
+	ft_memmove(str_dstm, str_srcm, 6 * sizeof(int));
+	printf("after ft_memmove: \n");
+	i = 0;
+	while (i < 8)
+	{
+		printf("%d\n", str_dstm[i]);
+		i++;
+	}
+	printf("\n");
 }
