@@ -6,12 +6,14 @@
 /*   By: gaguiar- <gaguiar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 14:05:33 by gaguiar-          #+#    #+#             */
-/*   Updated: 2025/07/22 15:22:15 by gaguiar-         ###   ########.fr       */
+/*   Updated: 2025/07/23 11:20:23 by gaguiar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+
+# include <stdlib.h>
 
 int		ft_isalnum(int c);
 int		ft_isalpha(int c);
@@ -26,5 +28,6 @@ int		ft_strncmp(const char *s1, const char *s2, int n);
 char	*ft_strnstr(const char *big, const char *little, int len);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
+void	ft_bzero(void *s, int n);
 
 #endif 

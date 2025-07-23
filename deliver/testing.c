@@ -104,4 +104,25 @@ int	main(void)
 		i++;
 	}
 	printf("\n");
+
+	//ft_bzero()
+	i = 0;
+	size = 4;
+	int str_bzero[8] = {1, 2, 3, 4, 5, 6, 7, 8};
+	printf("before bzero: \n");
+	while (i < 8)
+	{
+		printf("%d\n", str_bzero[i]);
+		i++;
+	}
+	printf("\n");
+	ft_bzero(str_bzero, 4 * sizeof(int));
+	printf("after bzero: \n");
+	i = 0;
+	while (i < 8)
+	{
+		printf("%d\n", str_bzero[i]);
+		i++;
+	}
+	printf("\n");
 }

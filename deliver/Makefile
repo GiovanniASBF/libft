@@ -14,7 +14,8 @@ SRC = ft_isalnum.c \
 	ft_strlcpy.c \
 	ft_strlcat.c \
 	ft_strnstr.c \
-	ft_memset.c
+	ft_memset.c \
+	ft_bzero.c
 OBJ = $(SRC:.c=.o)
 
 CC = cc
@@ -38,3 +39,5 @@ fclean: clean
 	rm -f $(NAME) $(TEST)
 
 re: fclean all
+
+.PHONY: all clean fclean re
