@@ -6,7 +6,7 @@
 /*   By: gaguiar- <gaguiar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/21 14:16:22 by gaguiar-          #+#    #+#             */
-/*   Updated: 2025/07/23 11:24:14 by gaguiar-         ###   ########.fr       */
+/*   Updated: 2025/07/23 11:36:44 by gaguiar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 int	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	int	dst_len;
-	int	i;
-	int	j;
-	int	src_len;
+	size_t	dst_len;
+	size_t	i;
+	size_t	j;
+	size_t	src_len;
 
 	dst_len = ft_strlen(dst);
 	i = dst_len;
