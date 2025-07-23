@@ -194,4 +194,11 @@ int	main(void)
 	printf("ft_memchr(): \n");
 	printf("string: %s\n", str);
 	printf("\n");
+
+	//ft_memcmp()
+	test_str = "abcd";
+	test_str2 = "abcda";
+	res_digit = ft_memcmp(test_str, test_str2, 5);
+	printf("ft_memcmp(): %i\n", res_digit);
+	printf("\n");
 }
