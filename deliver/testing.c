@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <ctype.h>
 #include <string.h>
-#include <bsd/string.h>
+//#include <bsd/string.h>
 
 int	main(void)
 {
@@ -96,7 +96,7 @@ int	main(void)
 	i = 0;
 	size = 4;
 	int str_memset[8];
-	memset(str_memset, size, 8 * sizeof(int));
+	ft_memset(str_memset, size, 8 * sizeof(int));
 	printf("memset(): \n");
 	while (i < 8)
 	{

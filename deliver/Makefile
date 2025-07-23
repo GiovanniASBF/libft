@@ -29,7 +29,7 @@ $(NAME): $(OBJ)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 $(TEST): testing.c $(NAME)
-	$(CC) -lbsd -o $(TEST) testing.c $(NAME)
+	$(CC) -o $(TEST) testing.c $(NAME)
 
 clean:
 	rm -f $(OBJ)
