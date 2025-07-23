@@ -6,7 +6,7 @@
 /*   By: gaguiar- <gaguiar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 14:05:33 by gaguiar-          #+#    #+#             */
-/*   Updated: 2025/07/23 14:47:29 by gaguiar-         ###   ########.fr       */
+/*   Updated: 2025/07/23 17:29:29 by gaguiar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n);
 void	*ft_memmove(void *dest, const void *src, size_t n);
 void	*ft_memset(void *s, int c, size_t n);
 char	*ft_strchr(const char *s, int c);
+char	*ft_strrchr(const char *s, int c);
 int		ft_strlcat(char *dst, const char *src, size_t size);
 int		ft_strlcpy(char *dst, const char *src, size_t size);
 int		ft_strlen(const char *s);

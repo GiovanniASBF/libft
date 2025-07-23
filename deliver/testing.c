@@ -176,4 +176,11 @@ int	main(void)
 	str = ft_strchr(test_str, test_char);
 	printf("ft_strchr(): \n");
 	printf("string: %s\n", str);
+
+	//ft_strrchr()
+	test_str = "adventuvre";
+	test_char = 'v';
+	str = ft_strrchr(test_str, test_char);
+	printf("ft_strrchr(): \n");
+	printf("string: %s\n", str);
 }
