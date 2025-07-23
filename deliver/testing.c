@@ -125,4 +125,26 @@ int	main(void)
 		i++;
 	}
 	printf("\n");
+
+	//ft_memcpy()
+	i = 0;
+	size = 4;
+	int str_src[8] = {1, 2, 3, 4, 5, 6, 7, 8};
+	int str_dst[8] = {10, 20, 30, 40, 50, 60, 70, 80};
+	printf("before ft_memcpy: \n");
+	while (i < 8)
+	{
+		printf("%d\n", str_dst[i]);
+		i++;
+	}
+	printf("\n");
+	ft_memcpy(str_dst, str_src, 6 * sizeof(int));
+	printf("after ft_memcpy: \n");
+	i = 0;
+	while (i < 8)
+	{
+		printf("%d\n", str_dst[i]);
+		i++;
+	}
+	printf("\n");
 }
