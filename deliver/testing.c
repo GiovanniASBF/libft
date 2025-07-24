@@ -220,4 +220,10 @@ int	main(void)
 		i++;
 	}
 	printf("\n");
+
+	//ft_strdup()
+	test_str = "bizarre";
+	char *str_dup = ft_strdup(test_str);
+	printf("ft_strdup(): \n");
+	printf("string: %s\n", str_dup);
 }

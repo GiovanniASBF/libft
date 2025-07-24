@@ -1,41 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gaguiar- <gaguiar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/24 15:32:02 by gaguiar-          #+#    #+#             */
-/*   Updated: 2025/07/24 16:36:46 by gaguiar-         ###   ########.fr       */
+/*   Created: 2025/07/24 16:38:30 by gaguiar-          #+#    #+#             */
+/*   Updated: 2025/07/24 18:41:58 by gaguiar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t nmemb, size_t size)
+char	*ft_strdup(const char *s)
 {
-	void	*aux;
-	size_t	total_size;
+	char	*aux;
+	size_t	len;
+	size_t	i;
 
-	if (nmemb == 0 || size == 0)
+	len = ft_strlen(s);
+	aux = malloc((len + 1) * sizeof(char));
+	i = 0;
+	while (i < len)
 	{
-		return (malloc(0));
+		aux[i] = s[i];
+		i++;
 	}
-	total_size = nmemb * size;
-	if (total_size / nmemb != size)
-	{
-		return (NULL);
-	}
-	aux = malloc(total_size);
-	if (aux == NULL)
-	{
-		return (NULL);
-	}
-	ft_memset(aux, 0, total_size);
+	aux[i] = '\0';
 	return (aux);
 }
 
 /*
-The idea of return malloc(0) is to return a valid pointer. 
-That make the usage of free() possible.
+When I call malloc, i define the size by "len = 1"
+to assure space for the null terminator
 */
