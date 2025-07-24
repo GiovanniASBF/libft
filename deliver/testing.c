@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <ctype.h>
 #include <string.h>
+#include <stdlib.h>
 //#include <bsd/string.h>
 
 int	main(void)
@@ -200,5 +201,11 @@ int	main(void)
 	test_str2 = "abcda";
 	res_digit = ft_memcmp(test_str, test_str2, 5);
 	printf("ft_memcmp(): %i\n", res_digit);
+	printf("\n");
+
+	//ft_atoi()
+	test_str = "    --75423";
+	res_digit = atoi(test_str);
+	printf("ft_atoi():%i\n", res_digit);
 	printf("\n");
 }
