@@ -208,4 +208,16 @@ int	main(void)
 	res_digit = atoi(test_str);
 	printf("ft_atoi():%i\n", res_digit);
 	printf("\n");
+
+	//ft_calloc()
+	i = 0;
+	size = 4;
+	int *str_calloc = ft_calloc(size, sizeof(int));
+	printf("str_calloc(): \n");
+	while (i < size)
+	{
+		printf("%d\n", str_calloc[i]);
+		i++;
+	}
+	printf("\n");
 }
