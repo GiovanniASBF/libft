@@ -6,7 +6,7 @@
 /*   By: gaguiar- <gaguiar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/26 14:50:55 by gaguiar-          #+#    #+#             */
-/*   Updated: 2025/07/26 18:33:57 by gaguiar-         ###   ########.fr       */
+/*   Updated: 2025/07/26 18:47:33 by gaguiar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,17 @@ int	main(void)
 	}
 }
 /*
+usar um ponteiro para guardar o inicio da string
+percorrer até chegar no delimitador,
+definit o len como a posição atual - a posição inicial
+usar o strlcpy para guardar o conteúdo desse len, com esse start e len + 1 como final na variavel word
+
+
+
+
+
+
+
 Allocates memory (using malloc(3)) and returns an
 array of strings obtained by splitting ’s’ using
 the character ’c’ as a delimiter. The array must
