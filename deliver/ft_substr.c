@@ -6,7 +6,7 @@
 /*   By: gaguiar- <gaguiar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/24 18:50:01 by gaguiar-          #+#    #+#             */
-/*   Updated: 2025/07/24 20:50:49 by gaguiar-         ###   ########.fr       */
+/*   Updated: 2025/07/26 10:44:25 by gaguiar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (ft_strdup(""));
 	if (ft_strlen(s) - start < len)
 		len = ft_strlen(s) - start;
-	aux = (char *)ft_calloc((len + 1), sizeof(char));
+	aux = (char *)malloc((len + 1) * sizeof(char));
 	if (aux == NULL)
 		return (NULL);
 	while (i < len && s[start + i])
@@ -30,6 +30,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		aux[i] = s[start + i];
 		i++;
 	}
+	aux[i] = '\0';
 	return (aux);
 }
 
