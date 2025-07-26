@@ -6,7 +6,7 @@
 /*   By: gaguiar- <gaguiar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/24 18:50:01 by gaguiar-          #+#    #+#             */
-/*   Updated: 2025/07/26 10:44:25 by gaguiar-         ###   ########.fr       */
+/*   Updated: 2025/07/26 10:46:28 by gaguiar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,4 @@ int	main (void)
 	char *result = ft_substr(str, 20, 1);
 	printf("Result: %s\n", result);
 }
-
-
 */

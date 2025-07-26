@@ -6,7 +6,7 @@
 /*   By: gaguiar- <gaguiar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/24 16:38:30 by gaguiar-          #+#    #+#             */
-/*   Updated: 2025/07/24 19:45:52 by gaguiar-         ###   ########.fr       */
+/*   Updated: 2025/07/26 11:46:21 by gaguiar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,6 @@ char	*ft_strdup(const char *s)
 }
 
 /*
-When I call malloc, i define the size by "len = 1"
+When I call malloc, i define the size by "len + 1"
 to assure space for the null terminator
 */
