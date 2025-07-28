@@ -28,7 +28,8 @@ SRC = ft_isalnum.c \
 	ft_substr.c \
 	ft_strjoin.c \
 	ft_strtrim.c \
-	ft_split.c
+	ft_split.c \
+	ft_itoa.c
 OBJ = $(SRC:.c=.o)
 
 CC = cc
