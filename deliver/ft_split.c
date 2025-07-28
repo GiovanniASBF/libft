@@ -12,8 +12,9 @@
 
 #include "libft.h"
 
-static	int	check_memory(int i, char **str);
-static	int	count_delimiter(char *str, char d);
+static	void	free_memory(int i, char **str);
+static	int	count_words(char *str, char d);
+static	char	*get_word(char*	str, char delimiter);
 
 char	**ft_split(char const *s, char c)
 {
@@ -21,60 +22,77 @@ char	**ft_split(char const *s, char c)
 	int		numb_of_str;
 	char	**res;
 
+	if (!s)
+		return (NULL);
+	numb_of_str = count_words((char *)s, c);
+	res = (char **)malloc(sizeof(char *) * (numb_of_str + 1));
+	if (!res)
+		return (NULL);
 	i = 0;
-	numb_of_str = count_delimiter((char *)s, c) + 1;
-	res = (char **)malloc(sizeof(char) * ft_strlen(s) + 1);
-	while (i < numb_of_str)
+	while (*s)
 	{
-		res[i] = (char *)malloc(sizeof(char) * ft_strlen(s));
-		if (check_memory(i, res) == 0)
+		while (*s == c)
+			s++;
+		if (*s)
 		{
-			return (NULL);
+			res[i] = get_word((char *)s, c);
+			if (!res[i])
+				return (free_memory(i, res), NULL);
+			s += ft_strlen(res[i++]);
 		}
-		res[i] = ft_strdup(s);
-		s = s + ft_strlen(s);
-		i++;
 	}
+	res[i] = NULL;
 	return (res);
 }
 
-static	int	check_memory(int i, char **str)
+static	void	free_memory(int i, char **str)
 {
-	if (str[i] == NULL)
-	{
-		while (i >= 0)
-		{
-			free(str[i]);
-			i--;
-		}
-		return (0);
-	}
-	return (1);
+	while (i--)
+		free(str[i]);
+	free(str);
 }
 
-static	int	count_delimiter(char *str, char d)
+static	int	count_words(char *str, char d)
 {
-	size_t	count;
-	size_t	i;
-	size_t	str_len;
+	int	count;
+	int	in_word;
 
 	count = 0;
-	i = 0;
-	str_len = ft_strlen(str);
-	while (i < str_len - 1)
+	in_word = 0;
+	while (*str)
 	{
-		if (str[i] == d)
+		if (*str != d && in_word == 0)
 		{
-			str[i] = '\0';
+			in_word = 1;
 			count++;
 		}
-		i++;
+		else if (*str == d)
+			in_word = 0;
+		str++;
 	}
-	if (str[i] == d)
-		str[i] = '\0';
 	return (count);
 }
 
+static	char	*get_word(char*	str, char delimiter)
+{
+	int		len;
+	char	*letter;
+	char	*start;
+	char	*word;
+
+	start = str;
+	letter = str;
+	while (*letter != delimiter && *letter)
+		letter++;
+	len = letter - start;
+	word = (char *)malloc(sizeof(char) * (len + 1));
+	if (word == NULL)
+		return (NULL);
+	ft_strlcpy(word, start, len + 1);
+	return (word);
+}
+
+/*
 #include <stdio.h>
 int	main(void)
 {
@@ -87,30 +105,8 @@ int	main(void)
 		i++;
 	}
 }
-/*
-usar um ponteiro para guardar o inicio da string
-percorrer até chegar no delimitador,
-definit o len como a posição atual - a posição inicial
-usar o strlcpy para guardar o conteúdo desse len, com esse start e len + 1 como final na variavel word
-
-
-
-
-
-
-
-Allocates memory (using malloc(3)) and returns an
-array of strings obtained by splitting ’s’ using
-the character ’c’ as a delimiter. The array must
-end with a NULL pointer.
-
-A ideia vai ser contar quantas palavras vão ser geradas no total.
-Para cada ocorrência do caractere delimitador
-a string vai ser separada.
-Uma ideia é substituir o delimitador por /0
-Mas com isso vamos ter diferentes strings;
-A ideia vai ser fazer uma lista com o numero de ocorrencias 
-do caractere delimitador 
-
-lembrar de usar o free para cada instancia do malloc caso dê errado
+At line 39 i used a C feature called the comma operator.
+It lets you evaluate multiple expressions, from left to right, and returns the value of the last one.
+But it just works because free_memory() returns nothing (it's void).
+It just runs free_memory() for its side effect, and return NULL.
 */
