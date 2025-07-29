@@ -6,7 +6,7 @@
 /*   By: gaguiar- <gaguiar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/23 14:38:05 by gaguiar-          #+#    #+#             */
-/*   Updated: 2025/07/29 19:18:59 by gaguiar-         ###   ########.fr       */
+/*   Updated: 2025/07/29 19:46:48 by gaguiar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,3 +31,9 @@ char	*ft_strchr(const char *s, int c)
 	}
 	return (NULL);
 }
+
+/*
+Cast to (unsigned char) to deal with large numbers input,
+because the representation of large numbers can't fit in 
+a signed char type (char).
+*/

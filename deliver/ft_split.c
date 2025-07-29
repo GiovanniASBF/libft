@@ -6,7 +6,7 @@
 /*   By: gaguiar- <gaguiar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/26 14:50:55 by gaguiar-          #+#    #+#             */
-/*   Updated: 2025/07/26 18:47:33 by gaguiar-         ###   ########.fr       */
+/*   Updated: 2025/07/29 19:52:45 by gaguiar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static	void	free_memory(int i, char **str);
 static	int	count_words(char *str, char d);
-static	char	*get_word(char*	str, char delimiter);
+static	char	*get_word(char *str, char delimiter);
 
 char	**ft_split(char const *s, char c)
 {
@@ -73,7 +73,7 @@ static	int	count_words(char *str, char d)
 	return (count);
 }
 
-static	char	*get_word(char*	str, char delimiter)
+static	char	*get_word(char *str, char delimiter)
 {
 	int		len;
 	char	*letter;
@@ -106,7 +106,8 @@ int	main(void)
 	}
 }
 At line 39 i used a C feature called the comma operator.
-It lets you evaluate multiple expressions, from left to right, and returns the value of the last one.
+It lets you evaluate multiple expressions, from left to right, 
+and returns the value of the last one.
 But it just works because free_memory() returns nothing (it's void).
 It just runs free_memory() for its side effect, and return NULL.
 */
