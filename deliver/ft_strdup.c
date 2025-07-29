@@ -6,7 +6,7 @@
 /*   By: gaguiar- <gaguiar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/24 16:38:30 by gaguiar-          #+#    #+#             */
-/*   Updated: 2025/07/26 11:46:21 by gaguiar-         ###   ########.fr       */
+/*   Updated: 2025/07/29 20:02:51 by gaguiar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ char	*ft_strdup(const char *s)
 
 	len = ft_strlen(s);
 	aux = (char *)malloc((len + 1) * sizeof(char));
+	if (!aux)
+		return (NULL);
 	i = 0;
 	while (i < len)
 	{
