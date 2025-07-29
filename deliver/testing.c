@@ -139,7 +139,7 @@ int	main(void)
 		i++;
 	}
 	printf("\n");
-	ft_memcpy(str_dst, str_src, 6 * sizeof(int));
+	memcpy(NULL, NULL, 6 * sizeof(int));
 	printf("after ft_memcpy: \n");
 	i = 0;
 	while (i < 8)
