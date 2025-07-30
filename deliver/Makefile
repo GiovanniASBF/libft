@@ -37,7 +37,7 @@ SRC = ft_isalnum.c \
 	ft_putendl_fd.c \
 	ft_putnbr_fd.c
 
-BONUS = ft_lstnew.c
+BONUS = ft_lstnew.c \
 
 OBJ = $(SRC:.c=.o)
 
@@ -57,8 +57,8 @@ $(NAME): $(OBJ)
 $(TEST): testing.c $(NAME)
 	$(CC) -o $(TEST) testing.c $(NAME)
 
-bonus: $(NAME) $(BONUS_OBJ)
-	ar crs $(NAME) $(BONUS_OBJ)
+bonus: 
+	$(MAKE) OBJ="$(OBJ) $(BONUS_OBJ)" all
 
 clean:
 	rm -f $(OBJ) $(BONUS_OBJ)
@@ -68,4 +68,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all bonus clean fclean re
