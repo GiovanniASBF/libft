@@ -57,11 +57,11 @@ $(NAME): $(OBJ)
 $(TEST): testing.c $(NAME)
 	$(CC) -o $(TEST) testing.c $(NAME)
 
-bonus: all
+bonus: $(NAME) $(BONUS_OBJ)
 	ar crs $(NAME) $(BONUS_OBJ)
 
 clean:
-	rm -f $(OBJ)
+	rm -f $(OBJ) $(BONUS_OBJ)
 
 fclean: clean
 	rm -f $(NAME) $(TEST)
