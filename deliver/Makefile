@@ -36,7 +36,12 @@ SRC = ft_isalnum.c \
 	ft_putstr_fd.c \
 	ft_putendl_fd.c \
 	ft_putnbr_fd.c
+
+BONUS = ft_lstnew.c
+
 OBJ = $(SRC:.c=.o)
+
+BONUS_OBJ = $(BONUS:.c=.o)
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror 
@@ -51,6 +56,9 @@ $(NAME): $(OBJ)
 
 $(TEST): testing.c $(NAME)
 	$(CC) -o $(TEST) testing.c $(NAME)
+
+bonus: all
+	ar crs $(BONUS) $(BONUS_OBJ)
 
 clean:
 	rm -f $(OBJ)
