@@ -58,7 +58,7 @@ $(TEST): testing.c $(NAME)
 	$(CC) -o $(TEST) testing.c $(NAME)
 
 bonus: all
-	ar crs $(BONUS) $(BONUS_OBJ)
+	ar crs $(NAME) $(BONUS_OBJ)
 
 clean:
 	rm -f $(OBJ)
