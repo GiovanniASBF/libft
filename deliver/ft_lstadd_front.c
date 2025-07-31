@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gaguiar- <gaguiar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/30 14:29:06 by gaguiar-          #+#    #+#             */
-/*   Updated: 2025/07/30 14:56:51 by gaguiar-         ###   ########.fr       */
+/*   Created: 2025/07/31 15:07:15 by gaguiar-          #+#    #+#             */
+/*   Updated: 2025/07/31 15:19:43 by gaguiar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,11 @@
 
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	new->next = &*lst;
+	if (*lst == NULL)
+	{
+		*lst = new;
+		return ;
+	}
+	new->next = *lst;
+	*lst = new;
 }
-
-/*
-lst: The address of a pointer to the first node of
-a list.
-new: The address of a pointer to the node to be
-added.
-
-Adds the node ’new’ at the beginning of the list.
-*/
