@@ -38,6 +38,7 @@ SRC = ft_isalnum.c \
 	ft_putnbr_fd.c
 
 BONUS = ft_lstnew.c \
+	ft_lstlast.c
 
 OBJ = $(SRC:.c=.o)
 
