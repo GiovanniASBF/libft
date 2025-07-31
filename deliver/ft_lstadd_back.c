@@ -1,17 +1,29 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gaguiar- <gaguiar-@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/07/31 15:25:20 by gaguiar-          #+#    #+#             */
+/*   Updated: 2025/07/31 15:26:21 by gaguiar-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-void    ft_lstadd_back(t_list **lst, t_list *new)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-    t_list  *node;
+	t_list	*node;
 
-    node = *lst;
-    if (*lst == NULL)
-    {
-        *lst = new;
-        return ;
-    }
-    while (node->next != NULL)
-        node = node->next;
-    node->next = new;
-    new->next = NULL;
+	node = *lst;
+	if (*lst == NULL)
+	{
+		*lst = new;
+		return ;
+	}
+	while (node->next != NULL)
+		node = node->next;
+	node->next = new;
+	new->next = NULL;
 }
