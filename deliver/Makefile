@@ -1,6 +1,5 @@
 #Variables
 NAME = libft.a
-TEST = test
 
 SRC = ft_isalnum.c \
 	ft_isalpha.c \
@@ -61,9 +60,6 @@ $(NAME): $(OBJ)
 
 %.o: %.c libft.h
 	$(CC) $(CFLAGS) -c $< -o $@
-
-$(TEST): testing.c $(NAME)
-	$(CC) -o $(TEST) testing.c $(NAME)
 
 bonus: 
 	$(MAKE) OBJ="$(OBJ) $(BONUS_OBJ)" all
