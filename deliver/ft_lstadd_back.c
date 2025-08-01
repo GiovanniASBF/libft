@@ -6,7 +6,7 @@
 /*   By: gaguiar- <gaguiar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 15:25:20 by gaguiar-          #+#    #+#             */
-/*   Updated: 2025/07/31 15:26:21 by gaguiar-         ###   ########.fr       */
+/*   Updated: 2025/08/01 17:44:16 by gaguiar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,4 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	while (node->next != NULL)
 		node = node->next;
 	node->next = new;
-	new->next = NULL;
 }
