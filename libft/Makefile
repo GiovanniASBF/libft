@@ -61,8 +61,8 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	$(AR) $@ $^
 
-bonus: $(OBJS) $(BONUS_OBJS)
-	$(AR) $(NAME) $^
+bonus:
+	$(MAKE) OBJS="$(OBJS) $(BONUS_OBJS)" all
 
 %.o: %.c libft.h
 	$(CC) $(CFLAGS) -c $< -o $@
