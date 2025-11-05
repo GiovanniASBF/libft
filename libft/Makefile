@@ -4,6 +4,9 @@ CC		= cc
 CFLAGS	= -Wall -Wextra -Werror
 AR		= ar crs
 RM		= rm -f
+SRC_DIR	= src
+INC_DIR	= includes
+BONUS_DIR	= src/bonus
 
 #Sources
 SRC_IS		= ft_isalnum.c \
@@ -64,8 +67,11 @@ $(NAME): $(OBJS)
 bonus:
 	$(MAKE) OBJS="$(OBJS) $(BONUS_OBJS)" all
 
-%.o: %.c libft.h
-	$(CC) $(CFLAGS) -c $< -o $@
+%.o: $(SRC_DIR)/%.c $(INC_DIR)/libft.h
+	$(CC) $(CFLAGS) -I $(INC_DIR) -c $< -o $@
+
+$(BONUS_OBJS): %.o: $(BONUS_DIR)/%.c $(INC_DIR)/libft.h
+	$(CC) $(CFLAGS) -I $(INC_DIR) -c $< -o $@
 
 clean:
 	$(RM) $(OBJS) $(BONUS_OBJS)
