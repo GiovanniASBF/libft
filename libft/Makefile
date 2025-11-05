@@ -7,6 +7,16 @@ RM		= rm -f
 SRC_DIR	= src
 INC_DIR	= includes
 BONUS_DIR	= src/bonus
+ALL_OBJS = $(OBJS) $(BONUS_OBJS)
+
+# Colors
+RESET   = \033[0m
+GREEN   = \033[1;32m
+RED     = \033[1;31m
+YELLOW  = \033[1;33m
+
+#VPATH
+VPATH = $(SRC_DIR):$(BONUS_DIR)
 
 #Sources
 SRC_IS		= ft_isalnum.c \
@@ -61,24 +71,21 @@ BONUS_OBJS	= $(BONUS_SRCS:.c=.o)
 #Rules
 all: $(NAME)
 
-$(NAME): $(OBJS)
-	$(AR) $@ $^
+$(NAME): $(ALL_OBJS)
+	@$(AR) $@ $^
+	@echo "$(GREEN)✅ libft.a $(RESET) built successfully."
 
-bonus:
-	$(MAKE) OBJS="$(OBJS) $(BONUS_OBJS)" all
-
-%.o: $(SRC_DIR)/%.c $(INC_DIR)/libft.h
-	$(CC) $(CFLAGS) -I $(INC_DIR) -c $< -o $@
-
-$(BONUS_OBJS): %.o: $(BONUS_DIR)/%.c $(INC_DIR)/libft.h
-	$(CC) $(CFLAGS) -I $(INC_DIR) -c $< -o $@
+%.o: %.c $(INC_DIR)/libft.h
+	@$(CC) $(CFLAGS) -I $(INC_DIR) -c $< -o $@
 
 clean:
-	$(RM) $(OBJS) $(BONUS_OBJS)
+	@$(RM) $(ALL_OBJS)
+	@echo "$(RED)❌ All object files removed. $(RESET)"
 
 fclean: clean
-	$(RM) $(NAME)
+	@$(RM) $(NAME)
+	@echo "$(RED)❌ libft.a executable removed. $(RESET)"
 
 re: fclean all
 
-.PHONY: all bonus clean fclean re
+.PHONY: all clean fclean re
