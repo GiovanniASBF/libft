@@ -14,8 +14,8 @@
 
 int	ft_atoi(const char *nptr)
 {
-	int	number;
-	int	sign;
+	long	number;
+	int		sign;
 
 	number = 0;
 	sign = 1;
@@ -26,17 +26,15 @@ int	ft_atoi(const char *nptr)
 	if (*nptr == '+' || *nptr == '-')
 	{
 		if (*nptr == '-')
-		{
-			sign = -sign;
-		}
+			sign = -1;
 		nptr++;
 	}
-	while (*nptr >= 48 && *nptr <= 57)
+	while (*nptr >= '0' && *nptr <= '9')
 	{
 		number = number * 10 + (*nptr - '0');
 		nptr++;
 	}
-	return (sign * number);
+	return ((int)(sign * number));
 }
 /*
 Return the converted value or 0 on error.	   
