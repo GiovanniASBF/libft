@@ -14,7 +14,7 @@ char	*ft_get_next_line(int fd)
 	node = ft_gnl_find_node(head, fd);
 	if (!node)
 	{
-		node = ft_node_builder(node, head, fd);
+		node = ft_gnl_node_builder(node, head, fd);
 		head = node;
 	}
 	node->buffer = ft_read_content(fd, node->buffer);

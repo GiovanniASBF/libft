@@ -7,7 +7,8 @@ RM		= rm -f
 SRC_DIR	= src
 INC_DIR	= includes
 BONUS_DIR	= src/bonus
-ALL_OBJS = $(OBJS) $(BONUS_OBJS)
+GNL_DIR		= src/gnl
+ALL_OBJS = $(OBJS) $(BONUS_OBJS) $(GNL_OBJS)
 
 # Colors
 RESET   = \033[0m
@@ -16,7 +17,7 @@ RED     = \033[1;31m
 YELLOW  = \033[1;33m
 
 #VPATH
-VPATH = $(SRC_DIR):$(BONUS_DIR)
+VPATH = $(SRC_DIR):$(BONUS_DIR):$(GNL_DIR)
 
 #Sources
 SRC_IS		= ft_isalnum.c \
@@ -67,6 +68,11 @@ BONUS_SRCS	= ft_lstnew_bonus.c \
 	ft_lstiter_bonus.c \
 	ft_lstmap_bonus.c
 BONUS_OBJS	= $(BONUS_SRCS:.c=.o)
+
+#GNL
+GNL_SRCS	= ft_get_next_line.c \
+	ft_get_next_line_utils.c
+GNL_OBJS	= $(GNL_SRCS:.c=.o)
 
 #Rules
 all: $(NAME)
