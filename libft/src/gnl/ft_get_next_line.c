@@ -14,12 +14,7 @@ char	*ft_get_next_line(int fd)
 	node = ft_gnl_find_node(head, fd);
 	if (!node)
 	{
-		node = (t_fd_buffer *)malloc(sizeof(t_fd_buffer));
-		if (!node)
-			return (NULL);
-		node->fd = fd;
-		node->buffer = ft_strdup("");
-		node->next = head;
+		node = ft_node_builder(node, head, fd);
 		head = node;
 	}
 	node->buffer = ft_read_content(fd, node->buffer);
@@ -29,8 +24,7 @@ char	*ft_get_next_line(int fd)
 		return (NULL);
 	}
 	line = ft_extract_line(node->buffer);
-	node->buffer = ft_substr(node->buffer, ft_strlen(line),
-	 (ft_strlen(node->buffer) - ft_strlen(line)));
+	node->buffer = ft_gnl_update_buffer(node->buffer, line);
 	if (!*(node->buffer))
 		ft_gnl_delete_node(&head, fd);
 	return (line);

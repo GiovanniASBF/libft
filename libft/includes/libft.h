@@ -81,5 +81,7 @@ int		ft_lstsize(t_list *lst);
 char	*ft_get_next_line(int fd);
 void	ft_gnl_delete_node(t_fd_buffer **head, int fd);
 t_fd_buffer	*ft_gnl_find_node(t_fd_buffer *head, int fd);
+t_fd_buffer	*ft_gnl_node_builder(t_fd_buffer *node, t_fd_buffer	*head, int fd);
+char	*ft_gnl_update_buffer(char *buffer, char *line);
 
 #endif 
