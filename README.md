@@ -1,103 +1,81 @@
-# About the project
-In this project I implement some C functions by myself, thus creating my own library, aiming to get deep in the C language.
+# Libft - My First C Library
 
-## Glossary
+## 📝 About
+This project involves re-implementing a set of standard libc functions, along with other useful utility functions, to build a foundational C library.
 
-These first functions check wheter the argument, which mush have the value of an unsigned char, falls into a certain character class.
+## 📚 Glossary
 
-#### ft_isalpha();
-> checks  for an alphabetic character
-#### ft_isdigit();
-> checks for a digit (0 through 9)
-#### ft_isalnum();
-> checks for an alphanumeric character; it is equivalent to (isalpha(c) || isdigit(c)).
-#### ft_isascii();
-> checks whether the argument is a 7-bit unsigned char value that  fits  into the ASCII character set.
-#### ft_isprint();
-> checks for any printable character including space.
+### 1. Libc Functions
+In this first part, I re-implemented a set of standard functions from the `libc`.
 
-#
-These functions convert lowercase letters to uppercase, and vice versa.
+#### Character Classification & Conversion
+| Function | Description |
+| :--- | :--- |
+| `ft_isalpha` | Checks for an alphabetic character. |
+| `ft_isdigit` | Checks for a digit (0 through 9). |
+| `ft_isalnum` | Checks for an alphanumeric character (equivalent to `isalpha` or `isdigit`). |
+| `ft_isascii` | Checks whether `c` fits into the ASCII character set. |
+| `ft_isprint` | Checks for any printable character, including space. |
+| `ft_toupper` | Converts a lowercase letter to uppercase. |
+| `ft_tolower` | Converts an uppercase letter to lowercase. |
 
-#### ft_tolower();
-#### ft_toupper();
+#### String Manipulation
+| Function | Description |
+| :--- | :--- |
+| `ft_strlen` | Calculates the length of a string. |
+| `ft_strlcpy` | Copies up to `size - 1` characters from `src` to `dst`, NUL-terminating the result. |
+| `ft_strlcat` | Appends `src` to the end of `dst`, ensuring total length does not exceed `size`. |
+| `ft_strchr` | Locates the first occurrence of character `c` in string `s`. |
+| `ft_strrchr` | Locates the last occurrence of character `c` in string `s`. |
+| `ft_strncmp` | Compares not more than `n` characters of two strings. |
+| `ft_strnstr` | Locates a substring in a string, searching at most `len` characters. |
+| `ft_strdup` | Creates a duplicate of the string `s` using `malloc`. |
+| `ft_atoi` | Converts the initial portion of a string to an integer. |
 
-#
-#### ft_atoi();
-> receives an string of digits and return this number as an int
-#### ft_bzero();
-> erases an amount of bytes received as argument of a block of memory also received as argument
-#### ft_calloc();
-> allocates memory for an array with a number of elements passed as arguments, each element of a size also passed as argument. Then fill this memory allocated with \0.
-#### ft_itoa();
-> receives a number as argument and return the pointer to the string with the sequence of digits equivalent of this number.
-#### ft_memchr();
-> scans the number of bytes passed as argument of a block of memory also passed as argument for the first instance of an character also passed as argument.
-> returns a pointer to that first occurence;
-#### ft_memcmp();
-> receives two block of memorys as argument, and iterate the amount of bytes of each also passed as argument. When they become different at some point,
-> it calculates the difference based on the ASCII table and return these different.
-#### ft_memcpy();
-> copies an amount of bytes received as argument of a block of memory into another block of memory, both also passed as argument. Return a pointer to the block that received the copy.
-#### ft_memmove();
-> works the same as ft_memcpy(), but it checks if both blocks of memory may overlap before start to copy.
-#### ft_memset();
-> fill an amount of bytes passed as argument of a block of memory also passed as argument with an character also passed as argument.
-#### ft_putchar_fd();
-> output a character in a filedescriptor, both received as argument.
-#### ft_putendl_fd();
-> output a string in a filedescriptor, both passed as argument, followed by a new line.
-#### ft_putnbr_fd();
-> output a number in a filedescriptor, both passed as argument;
-#### ft_putstr_fd();
-> output a string in a filedescriptor;
-#### ft_split();
-> receives a string as argument, and use a character also passed as argument, as a delimiter, dividing the string into multiple strings. Return an array of multiple strings;
-#### ft_strchr();
-> receives a string as argument and search for the first ocurrence of a character also passed as argument. Return a pointer to that first ocurrence.
-#### ft_strdup();
-> receives a string as argument and generate a new identical string, returning it.
-#### ft_striteri();
-> receives a function as argument and iterate through a string, also receive as argument, apllying the function to each character;
-#### ft_strjoin();
-> receives two strings as argument and return a new one whith the union of both;
-#### ft_strlcat();
-> receives two strings as argument. Checks if the amount of bytes also received as argument is at least bigger than the length of the first string. Join elements of the second string until the first string acquires the bytespassed as argument. Returns the length of the string it's suppose to create;
-#### ft_strlcpy();
-> copies the amount of bytes passed as argument of a string passed as argument into another string also passed as argument. Returning the length of the string it tried to copy from;
-#### ft_strlen();
-> returns the length of the string passed as argument.
-#### ft_strmapi();
-> generates a new string based of the content of the string received as argument modified by the function passed as argument;
-#### ft_strncmp();
-> receives two strings and iterate through them. If they're different at some point return the difference between them based on the ASCCII table.
-#### ft_strnstr();
-> searches the first ocuurence of a string inside another, both passed as arguments. The amount of bytes searched is also passed as argument.
-#### ft_strrchr();
-> returns a pointer to the last occurence of a character in a string, bot received as argument.
-#### ft_strtrim();
-> searches for the occurence of a set of characters received as argument at the start and end of a string. Return a copy of the string, also received as argument, with the characters of the set removed;
-#### ft_substr();
-> returns a substring from the string received as argument. The substring starts at index ’start’ and has a maximum length of ’len, both also received as argument.
+#### Memory Manipulation
+| Function | Description |
+| :--- | :--- |
+| `ft_memset` | Fills the first `n` bytes of the memory area `s` with the constant byte `c`. |
+| `ft_bzero` | Erases the data in the `n` bytes of the memory starting at `s` by writing zeros. |
+| `ft_memcpy` | Copies `n` bytes from memory area `src` to memory area `dest`. |
+| `ft_memmove` | Copies `n` bytes from `src` to `dest`, handling overlapping memory areas correctly. |
+| `ft_memchr` | Scans the first `n` bytes of memory `s` for the first instance of `c`. |
+| `ft_memcmp` | Compares the first `n` bytes of two memory areas. |
+| `ft_calloc` | Allocates memory for an array and initializes it to zero. |
 
-#
-These functions manipulate linked lists.
+### 2. Additional Functions
+A set of functions that are either not in the libc, or are part of it but in a different form.
 
-#### ft_lstadd_back();
-> adds a new node at the end of the list.
-#### ft_lstadd_front();
-> adds a new node at the beginning of the list.
-#### ft_lstclear();
-> deletes and frees the given node and all its successor.
-#### ft_lstdelone();
-> takes a node as argument and frees its content using the function ’del’ also received as argument.
-#### ft_lstiter();
-> iterates through a list and applies a function to the content of each node.
-#### ft_lstlast();
-> returns the last node of the list.
-#### ft_lstmap();
-> iterates through a list, applies a function to each node’s content, and creates a new list resulting of the successive applications of the function. The ’del’ function is used to delete the content of a node if needed.
-#### ft_lstnew();
-> returns a new node. The ’content’ member variable is initialized with the given parameter ’content’. The variable ’next’ is initialized to NULL.
-#### ft_lstsize();
-> Counts the number of nodes in the list.
+#### String Operations
+| Function | Description |
+| :--- | :--- |
+| `ft_substr` | Allocates and returns a substring from the string `s`, starting at index `start` and of max size `len`. |
+| `ft_strjoin` | Allocates and returns a new string resulting from the concatenation of `s1` and `s2`. |
+| `ft_strtrim` | Allocates and returns a copy of `s1` with characters specified in `set` removed from the beginning and end. |
+| `ft_split` | Allocates and returns an array of strings obtained by splitting `s` using the character `c` as a delimiter. |
+| `ft_strmapi` | Applies function `f` to each character of `s` to create a new string. |
+| `ft_striteri` | Applies function `f` on each character of `s` passed as argument, passing its index as the first argument. |
+
+#### Conversion & Output
+| Function | Description |
+| :--- | :--- |
+| `ft_itoa` | Allocates and returns a string representing the integer received as an argument. |
+| `ft_putchar_fd`| Outputs the character `c` to the given file descriptor. |
+| `ft_putstr_fd` | Outputs the string `s` to the given file descriptor. |
+| `ft_putendl_fd`| Outputs the string `s` to the given file descriptor, followed by a newline. |
+| `ft_putnbr_fd` | Outputs the integer `n` to the given file descriptor. |
+
+### 3. Bonus Functions (Linked Lists)
+Functions to manipulate generic linked lists.
+
+| Function | Description |
+| :--- | :--- |
+| `ft_lstnew` | Allocates and returns a new node with the given content. |
+| `ft_lstadd_front`| Adds the node `new` at the beginning of the list. |
+| `ft_lstsize` | Counts the number of nodes in a list. |
+| `ft_lstlast` | Returns the last node of the list. |
+| `ft_lstadd_back` | Adds the node `new` at the end of the list. |
+| `ft_lstdelone` | Frees the memory of a node's content using the given function `del` and frees the node. |
+| `ft_lstclear` | Deletes and frees the given node and every successor of that node. |
+| `ft_lstiter` | Iterates the list and applies the function `f` to the content of each node. |
+| `ft_lstmap` | Iterates the list and applies `f` to each node's content to create a new list. |
