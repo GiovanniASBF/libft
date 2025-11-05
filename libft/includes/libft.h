@@ -16,11 +16,22 @@
 # include <stdlib.h>
 # include <unistd.h>
 
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 10
+# endif
+
 typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
 }					t_list;
+
+typedef struct	s_fd_buffer
+{
+	int					fd;
+	char				*buffer;
+	struct s_fd_buffer	*next;
+}						t_fd_buffer;
 
 int		ft_atoi(const char *nptr);
 void	ft_bzero(void *s, size_t n);
