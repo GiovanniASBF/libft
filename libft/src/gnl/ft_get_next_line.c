@@ -22,7 +22,11 @@ char	*ft_get_next_line(int fd)
 		head = node;
 	}
 	node->buffer = ft_read_content(fd, node->buffer);
-	
+	if (!node->buffer || !*(node->buffer))
+	{
+		ft_gnl_delete_node(&head, fd);
+		return (NULL);
+	}
 }
 
 static char	*ft_read_content(int fd, char *buf)
