@@ -1,5 +1,6 @@
 #include "libft.h"
 
+static char	*ft_extract_line(char *buf);
 static char	*ft_read_content(int fd, char *buf);
 
 char	*ft_get_next_line(int fd)
@@ -27,6 +28,12 @@ char	*ft_get_next_line(int fd)
 		ft_gnl_delete_node(&head, fd);
 		return (NULL);
 	}
+	line = ft_extract_line(node->buffer);
+	node->buffer = ft_substr(node->buffer, ft_strlen(line),
+	 (ft_strlen(node->buffer) - ft_strlen(line)));
+	if (!*(node->buffer))
+		ft_gnl_delete_node(&head, fd);
+	return (line);
 }
 
 static char	*ft_read_content(int fd, char *buf)
@@ -55,4 +62,18 @@ static char	*ft_read_content(int fd, char *buf)
 	}
 	free(read_chunk);
 	return(buf);
+}
+
+static char	*ft_extract_line(char *buf)
+{
+	size_t	len;
+
+	if (!buf || !*buf)
+		return (NULL);
+	len = 0;
+	while (buf[len] && buf[len] != '\n')
+		len++;
+	if (buf[len] == '\n')
+		len++;
+	return (ft_substr(buf, 0, len));
 }
