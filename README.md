@@ -79,3 +79,10 @@ Functions to manipulate generic linked lists.
 | `ft_lstclear` | Deletes and frees the given node and every successor of that node. |
 | `ft_lstiter` | Iterates the list and applies the function `f` to the content of each node. |
 | `ft_lstmap` | Iterates the list and applies `f` to each node's content to create a new list. |
+
+### 4. Get Next Line (GNL)
+A utility function that reads a file line by line.
+
+| Function | Description |
+| :--- | :--- |
+| `get_next_line` | Reads a line from a file descriptor. Successive calls to this function will read the entire file, line by line, until the end. It handles multiple file descriptors simultaneously without losing the reading thread on any of them. |
