@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_get_next_line_bonus.c                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gaguiar- <gaguiar-@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/11/06 14:44:58 by gaguiar-          #+#    #+#             */
+/*   Updated: 2025/11/06 14:47:02 by gaguiar-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 static char	*ft_extract_line(char *buf);
@@ -5,12 +17,13 @@ static char	*ft_read_content(int fd, char *buf);
 
 char	*ft_get_next_line(int fd)
 {
-	static	t_fd_buffer	*head = NULL;
-	t_fd_buffer	*node;
-	char	*line;
+	static t_fd_buffer	*head;
+	t_fd_buffer			*node;
+	char				*line;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
+	head = NULL;
 	node = ft_gnl_find_node(head, fd);
 	if (!node)
 	{
@@ -55,7 +68,7 @@ static char	*ft_read_content(int fd, char *buf)
 		buf = temp_buf;
 	}
 	free(read_chunk);
-	return(buf);
+	return (buf);
 }
 
 static char	*ft_extract_line(char *buf)

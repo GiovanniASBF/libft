@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   input_handler.c                                    :+:      :+:    :+:   */
+/*   ft_input_handler_pntf.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gaguiar- <gaguiar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/15 01:55:05 by gaguiar-          #+#    #+#             */
-/*   Updated: 2025/08/21 15:19:37 by gaguiar-         ###   ########.fr       */
+/*   Updated: 2025/11/06 14:44:34 by gaguiar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static t_format	ft_pntf_get_format_info(const char *str);
 void	ft_pntf_input_handler(va_list args, const char *format, int *count)
 {
 	int	consumed_len;
-	
+
 	while (*format)
 	{
 		if (*format == '%')

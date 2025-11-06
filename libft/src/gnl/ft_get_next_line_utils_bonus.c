@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_get_next_line_utils_bonus.c                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gaguiar- <gaguiar-@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/11/06 14:49:48 by gaguiar-          #+#    #+#             */
+/*   Updated: 2025/11/06 14:51:51 by gaguiar-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 t_fd_buffer	*ft_gnl_find_node(t_fd_buffer *head, int fd)
@@ -8,7 +20,7 @@ t_fd_buffer	*ft_gnl_find_node(t_fd_buffer *head, int fd)
 	while (current)
 	{
 		if (current->fd == fd)
-			return current;
+			return (current);
 		current = current->next;
 	}
 	return (NULL);
@@ -41,8 +53,7 @@ void	ft_gnl_delete_node(t_fd_buffer **head, int fd)
 	}
 }
 
-t_fd_buffer	*ft_gnl_node_builder(t_fd_buffer *node, 
-	t_fd_buffer	*head, int fd)
+t_fd_buffer	*ft_gnl_node_builder(t_fd_buffer *node,	t_fd_buffer	*head, int fd)
 {
 	node = (t_fd_buffer *)malloc(sizeof(t_fd_buffer));
 	if (!node)
