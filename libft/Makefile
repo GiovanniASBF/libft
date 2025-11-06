@@ -1,14 +1,15 @@
 #Variables
-NAME	= libft.a
-CC		= cc
-CFLAGS	= -Wall -Wextra -Werror
-AR		= ar crs
-RM		= rm -f
-SRC_DIR	= src
-INC_DIR	= includes
+NAME		= libft.a
+CC			= cc
+CFLAGS		= -Wall -Wextra -Werror
+AR			= ar crs
+RM			= rm -f
+SRC_DIR		= src
+INC_DIR		= include
 BONUS_DIR	= src/bonus
 GNL_DIR		= src/gnl
-ALL_OBJS = $(OBJS) $(BONUS_OBJS) $(GNL_OBJS)
+PNTF_DIR	= src/ft_printf
+ALL_OBJS 	= $(OBJS) $(BONUS_OBJS) $(GNL_OBJS) $(PNTF_OBJS)
 
 # Colors
 RESET   = \033[0m
@@ -17,7 +18,7 @@ RED     = \033[1;31m
 YELLOW  = \033[1;33m
 
 #VPATH
-VPATH = $(SRC_DIR):$(BONUS_DIR):$(GNL_DIR)
+VPATH = $(SRC_DIR):$(BONUS_DIR):$(GNL_DIR):$(PNTF_DIR)
 
 #Sources
 SRC_IS		= ft_isalnum.c \
@@ -70,9 +71,16 @@ BONUS_SRCS	= ft_lstnew_bonus.c \
 BONUS_OBJS	= $(BONUS_SRCS:.c=.o)
 
 #GNL
-GNL_SRCS	= ft_get_next_line.c \
-	ft_get_next_line_utils.c
+GNL_SRCS	= ft_get_next_line_bonus.c \
+	ft_get_next_line_utils_bonus.c
 GNL_OBJS	= $(GNL_SRCS:.c=.o)
+
+#PNTF
+PNTF_SRCS	= ft_format_converter_pntf.c \
+	ft_input_handler_pntf.c \
+	ft_printer_pntf.c \
+	ft_printf.c
+PNTF_OBJS	= $(PNTF_SRCS:.c=.o)
 
 #Rules
 all: $(NAME)

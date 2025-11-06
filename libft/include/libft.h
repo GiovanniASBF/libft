@@ -13,6 +13,7 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# include <stdarg.h>
 # include <stdlib.h>
 # include <unistd.h>
 
@@ -32,6 +33,11 @@ typedef struct	s_fd_buffer
 	char				*buffer;
 	struct s_fd_buffer	*next;
 }						t_fd_buffer;
+
+typedef struct	s_format
+{
+	char	conversion_type;
+}			t_format;
 
 int		ft_atoi(const char *nptr);
 void	ft_bzero(void *s, size_t n);
@@ -83,5 +89,15 @@ void	ft_gnl_delete_node(t_fd_buffer **head, int fd);
 t_fd_buffer	*ft_gnl_find_node(t_fd_buffer *head, int fd);
 t_fd_buffer	*ft_gnl_node_builder(t_fd_buffer *node, t_fd_buffer	*head, int fd);
 char	*ft_gnl_update_buffer(char *buffer, char *line);
+
+void	ft_pntf_input_handler(va_list args, const char *format, int *count);
+void	ft_pntf_printhex(unsigned long ptr, char *base, int *count);
+int		ft_printf(const char *format, ...);
+void	ft_pntf_print_char(char c, int *count);
+void	ft_pntf_print_str(char *str, int *count);
+void	ft_pntf_printptr(void *ptr, int *count);
+void	ft_pntf_printnbr(int n, int *count);
+void	ft_pntf_printunbr(unsigned int n, int *count);
+int		ft_pntf_specifier_handler(const char *str, va_list args, int *count);
 
 #endif 
