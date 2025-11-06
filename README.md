@@ -80,7 +80,14 @@ Functions to manipulate generic linked lists.
 | `ft_lstiter` | Iterates the list and applies the function `f` to the content of each node. |
 | `ft_lstmap` | Iterates the list and applies `f` to each node's content to create a new list. |
 
-### 4. Get Next Line (GNL)
+### 4. ft_printf
+A recreation of the famous C standard library `printf` function.
+
+| Function | Description |
+| :--- | :--- |
+| `ft_printf` | Formats and prints data to the standard output according to a format string. It handles various types of conversions, such as characters (`%c`), strings (`%s`), pointers (`%p`), integers (`%d`, `%i`), unsigned integers (`%u`), and hexadecimal numbers (`%x`, `%X`), as well as the percent sign (`%%`). |
+
+### 5. Get Next Line (GNL)
 A utility function that reads a file line by line.
 
 | Function | Description |
